@@ -24,6 +24,9 @@ This will prompt for configuration options. Configure as you see fit. I recommen
 
 ## SSH access
 
+1. `vi /etc/rc.conf`
+2. change `sshd_enable="NO"` to `sshd_enable="YES"`
+
 parameters: needs to belong to group "wheel" - reason? to enable SSH
 also make sure when choosing a shell input "bash" - otherwise csh will default, and this won't work
 
