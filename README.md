@@ -29,7 +29,8 @@ also make sure when choosing a shell input "bash" - otherwise csh will default, 
 
 ### adduser
 1. type: `adduser`
-1. Invite to login group 'wheel'
+2. Invite to login group 'wheel'
+3. Set shell path to bash (/usr/local/bin/bash)
 
 
 Step 3: Install Git
