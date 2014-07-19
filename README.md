@@ -1,3 +1,8 @@
+Put this stuff after
+
+## Server
+edit webserver jail get mac address fix router
+
 # New Jail
 * **name:** webserver
 * **type:** portjail (x64)
@@ -35,7 +40,7 @@ This will prompt for configuration options. Configure as you see fit. I recommen
 
 1. `cd /usr/ports/shells/bash`
 2. `make install clean`
-
+3. I turn off P4 and CVS
 ### Port: sudo
 
 1. `cd /usr/ports/security/sudo`
@@ -53,6 +58,11 @@ If you do, and you log in with the user you created earlier, you'll likely need 
 
 1. `cd /usr/ports/devel/git`
 2. `make install clean`
+3. When it asks about `curl`, I install with LDAP/S and LIBSSH2
+4. When `ca_root_nss-3.16.1` select ETCSYMLINK
+5. DOCS not needed for `xmlto`, `getopt`, `libgcrypt`, `libgpg-error`, `docbook-xsl`, `xmlcatmgr`, `w3m`, `boehm-gc`, `libatomic_ops`
+6. EXAMPLES not needed for `python27`
+
 
 (this will take a while, but stick with it)
 
