@@ -8,20 +8,6 @@ Click 'save'
 1. Click 'webserver'
 1. Click 'shell'
 
-## Ports
-In the shell that you launched for the web server jail you created we need to fetch extract and update our ports.
-
-1. portsnap fetch
-1. portsnap extract
-1. portsnap update
-
-### Port: bash
-
-`cd /usr/ports/shells/bash`
-`make install clean`
-
-This will prompt for configuration options. Configure as you see fit. I recommend (in the subsequent dependent port installations, disabling EXAMPLES *pic here*
-
 ## SSH access
 
 1. `vi /etc/rc.conf`
@@ -34,28 +20,54 @@ also make sure when choosing a shell input "bash" - otherwise csh will default, 
 ### adduser
 1. type: `adduser`
 2. Invite to login group 'wheel'
-3. Set shell path to bash (/usr/local/bin/bash)
+3. Set shell path to bash (We'll install this in the next steps) `/usr/local/bin/bash`
 
 
-Step 3: Install Git
+## Ports
+In the shell that you launched for the web server jail you created we need to fetch extract and update our ports.
 
-(can be done anywhere)
-portsnap fetch
-portsnap extract
+1. portsnap fetch
+1. portsnap extract
+1. portsnap update
 
-Now you can navigate to:
-cd /usr/ports/devel/git
-make install clean
+### Port: bash
+This will prompt for configuration options. Configure as you see fit. I recommend (in the subsequent dependent port installations, disabling EXAMPLES *pic here*
+
+1. `cd /usr/ports/shells/bash`
+2. `make install clean`
+
+### Port: sudo
+
+1. `cd /usr/ports/security/sudo`
+2. `make install clean`
+3. I like to select `INSULTS` and `LDAP` as options
+4. `vi /usr/local/etc/sudoers`
+5. uncomment (remove '#') this line `# %wheel ALL=(ALL) ALL` (near the bottom of the file)
+6. `wq!` (Write, Quit, Because I Said So)
+
+
+NOTE: AT THIS POINT YOU CAN SSH INTO YOUR BOX IF YOU'D LIKE TO; NO MORE FreeNAS WEBGUI SHELL
+If you do, and you log in with the user you created earlier, you'll likely need to install ports using the `sudo` command. Oh, how convenient; we just installed that.
+
+### Port: git
+
+1. `cd /usr/ports/devel/git`
+2. `make install clean`
 
 (this will take a while, but stick with it)
 
 
-Step 4: Install MySQL:
+### Port: MySQL
 
-cd /usr/ports/databases/mysql56-server
-make install clean
+1. `cd /usr/ports/databases/mysql56-server`
+2. `make install clean`
 
 
+### Port: rbenv
+
+1. `cd /usr/ports/databases/mysql56-server`
+2. `make install clean`
+3. 
 Step 5: Install rbenv
 
 cd
