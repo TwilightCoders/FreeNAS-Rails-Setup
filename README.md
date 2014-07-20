@@ -47,6 +47,7 @@ This will prompt for configuration options. Configure as you see fit. I recommen
 1. `cd /usr/ports/shells/bash`
 2. `make install clean`
 3. I turn off P4 and CVS
+
 ### Port: sudo
 
 1. `cd /usr/ports/security/sudo`
