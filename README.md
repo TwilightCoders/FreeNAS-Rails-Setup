@@ -61,8 +61,7 @@ If you do, and you log in with the user you created earlier, you'll likely need 
 3. When it asks about `curl`, I install with LDAP/S and LIBSSH2
 4. When `ca_root_nss-3.16.1` select ETCSYMLINK
 5. DOCS not needed for `xmlto`, `getopt`, `libgcrypt`, `libgpg-error`, `docbook-xsl`, `xmlcatmgr`, `w3m`, `boehm-gc`, `libatomic_ops`
-6. EXAMPLES not needed for `python27`
-
+6. EXAMPLES not needed for `python27`, `p5*`
 
 (this will take a while, but stick with it)
 
@@ -75,14 +74,9 @@ If you do, and you log in with the user you created earlier, you'll likely need 
 
 ### Port: rbenv
 
-1. `cd /usr/ports/databases/mysql56-server`
+1. `cd /usr/ports/devel/rbenv`
 2. `make install clean`
-3. 
-Step 5: Install rbenv
-
-cd
-git clone git://github.com/sstephenson/rbenv.git .rbenv
-echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
+3. echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
 echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
 git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 source ~/.bash_profile
