@@ -22,11 +22,17 @@ Click 'save'
 parameters: needs to belong to group "wheel" - reason? to enable SSH
 also make sure when choosing a shell input "bash" - otherwise csh will default, and this won't work
 
-### adduser
+### adduser (your own account)
 1. type: `adduser`
 2. Invite to login group 'wheel'
 3. Set shell path to bash (We'll install this in the next steps) `/usr/local/bin/bash`
 
+### promote www to real user
+1. `mkdir /home/www`
+2. `chown -R www:www /home/www`
+3. `chpass www`
+4. set home to `/home/www`
+5. set shell to `/usr/local/bin/bash`
 
 ## Ports
 In the shell that you launched for the web server jail you created we need to fetch extract and update our ports.
@@ -72,13 +78,15 @@ If you do, and you log in with the user you created earlier, you'll likely need 
 2. `make install clean`
 
 
-### Port: rbenv
+### Port: rbenv (https://github.com/sstephenson/rbenv)
 
 1. `cd /usr/ports/devel/rbenv`
 2. `make install clean`
 3. echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
-echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
-git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+4. echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
+
+### Port: ruby-build (https://github.com/sstephenson/ruby-build)
+
 source ~/.bash_profile
 
 (this only works because we installed git, and we are using bash)
