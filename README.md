@@ -145,10 +145,11 @@ Partial credit goes to:
 
 
 1. `gem install unicorn`
-2. `ruby -e "$(curl -fsSL https://raw.github.com/TwilightCoders/FreeNAS-Rails-Setup/master/unicorn.rb -o sites/SITE_PROJECT_NAME/config/unicorn.rb)"`
-3. Edit the unicorn.rb file that is now in your config directory for the rails project you made earlier. `vi sites/SITE_PROJECT_NAME/config/unicorn.rb`
-4. Set `site_name` to the name of your project (SITE_PROJECT_NAME, or whatever you called it)
-5. `:wq!` (write, quite, because I said so)
+2. `rbenv rehash`
+3. `ruby -e "$(curl -fsSL https://raw.github.com/TwilightCoders/FreeNAS-Rails-Setup/master/unicorn.rb -o sites/SITE_PROJECT_NAME/config/unicorn.rb)"`
+4. Edit the unicorn.rb file that is now in your config directory for the rails project you made earlier. `vi sites/SITE_PROJECT_NAME/config/unicorn.rb`
+5. Set `site_name` to the name of your project (SITE_PROJECT_NAME, or whatever you called it)
+6. `:wq!` (write, quite, because I said so)
 
 
 ## 2.5 nginx
