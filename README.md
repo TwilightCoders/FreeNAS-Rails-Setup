@@ -126,12 +126,12 @@ Let's get Bundler and Rails installed, as we'll need those to get a basic projec
 1. `gem install bundler rails`
 2. `gem install sqlite3 -- --with-sqlite3-dir=/usr/local`
 3. `rbenv rehash`
-4. `rails new sites/name_your_project`
+4. `rails new sites/SITE_PROJECT_NAME`
 
 ## Unicorn
 
 1. `gem install unicorn`
-2. `ruby -e "$(curl -fsSL https://raw.github.com/TwilightCoders/FreeNAS-Rails-Setup/master/unicorn.rb -o sites/name_your_project/unicorn.rb)"`
+2. `ruby -e "$(curl -fsSL https://raw.github.com/TwilightCoders/FreeNAS-Rails-Setup/master/unicorn.rb -o sites/SITE_PROJECT_NAME/config/unicorn.rb)"`
 
 # Server
 edit webserver jail get mac address fix router
