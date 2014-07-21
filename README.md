@@ -22,11 +22,11 @@ also make sure when choosing a shell input "bash" - otherwise csh will default, 
 
 ### promote www to real user
 1. `mkdir /home/www`
-2. `chown -R www:www /home/www`
-3. `chpass www`
-4. set home to `/home/www`
-5. set shell to `/usr/local/bin/bash`
-6. `cp ~/.profile /home/www` (Copy our profile over to www, because it never had one to begin with)
+2. `cp ~/.profile /home/www` (Copy our profile over to www, because it never had one to begin with)
+3. `chown -R www:www /home/www`
+4. `chpass www`
+5. set home to `/home/www`
+6. set shell to `/usr/local/bin/bash`
 
 ## Ports
 In the shell that you launched for the web server jail you created we need to fetch extract and update our ports.
