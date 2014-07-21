@@ -95,6 +95,8 @@ V8 JavaScript for client and server
 2. `make install clean`
 3. I turn on `HTTP_GEOIP`, `HTTP_GZIP_STATIC`, `HTTP_GUNZIP_FILTER`, `HTTP_PERL`, `MAIL`, `MAIL_SSL`, `HTTP_AUTH_LDAP`, `HTTP_AUTH_DIGEST`, `HTTP_FANCYINDEX`, `HTTP_PUSH`, `HTTP_PUSH_STREAM`, `HTTP_REDIS`, `HTTP_RESPONSE`, `HTTP_UPLOAD`, `HTTP_UPLOAD_PROGRESS` (you can always install more or less depending on what your server needs)
 4. `echo 'nginx_enable="YES"' >> /etc/rc.conf`
+5. `mkdir /var/log/nginx`
+6. `chmod g+w /var/log/nginx`
 
 ### 1.2.8. Port: rbenv (https://github.com/sstephenson/rbenv)
 
