@@ -177,8 +177,16 @@ Partial credit goes to:
 2. `mkdir sites`
 3. `mkdir conf.d`
 4. `curl -fsSL https://raw.github.com/TwilightCoders/FreeNAS-Rails-Setup/master/options -o conf.d/options`
-5. `curl -fsSL https://raw.github.com/TwilightCoders/FreeNAS-Rails-Setup/master/default.rails.site -o sites/default.rails.site`
+5. `curl -fsSL https://raw.github.com/TwilightCoders/FreeNAS-Rails-Setup/master/default.rails.site -o default.rails.site`
 6. `curl -fsSL https://raw.github.com/TwilightCoders/FreeNAS-Rails-Setup/master/nginx.conf -o nginx.conf`
+7. `cp default.rails.site sites/SITE_PROJECT_NAME.site`
+
+Now edit that file you just copied over and edit the following:
+1. Change `app_server` (line 1) to `SITE_PROJECT_NAME_server`
+2. Change the path on line 2 to match your socket path
+3. Change `server_name` to reflect the domain name you expect to use
+4. Change the `root` path to match your project path
+5. Finally, change the `proxy_path` (near the bottom) to reflect the change you made in the first step
 
 # 3. Launch!
 Alright! That wasn't too bad, now was it? Just a lot of coffee breaks waiting for things to compile/install.
