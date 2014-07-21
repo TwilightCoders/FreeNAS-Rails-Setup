@@ -1,9 +1,4 @@
-Put this stuff after
-
-## Server
-edit webserver jail get mac address fix router
-
-# New Jail
+# Jail
 1. **name:** webserver
 2. **type:** portjail (x64)
 3. Click 'save'
@@ -31,6 +26,7 @@ also make sure when choosing a shell input "bash" - otherwise csh will default, 
 3. `chpass www`
 4. set home to `/home/www`
 5. set shell to `/usr/local/bin/bash`
+6. `cp ~/.profile /home/www` (Copy our profile over to www, because it never had one to begin with)
 
 ## Ports
 In the shell that you launched for the web server jail you created we need to fetch extract and update our ports.
@@ -116,3 +112,6 @@ Let's get Bundler and Rails installed, as we'll need those to get a basic projec
 1. `gem install bundler rails`
 
 
+
+# Server
+edit webserver jail get mac address fix router
