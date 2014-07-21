@@ -92,6 +92,7 @@ V8 JavaScript for client and server
 1. `cd /usr/ports/www/nginx`
 2. `make install clean`
 3. I turn on `HTTP_GEOIP`, `HTTP_GZIP_STATIC`, `HTTP_GUNZIP_FILTER`, `HTTP_PERL`, `MAIL`, `MAIL_SSL`, `HTTP_AUTH_LDAP`, `HTTP_AUTH_DIGEST`, `HTTP_FANCYINDEX`, `HTTP_PUSH`, `HTTP_PUSH_STREAM`, `HTTP_REDIS`, `HTTP_RESPONSE`, `HTTP_UPLOAD`, `HTTP_UPLOAD_PROGRESS` (you can always install more or less depending on what your server needs)
+4. `echo 'nginx_enable="YES"' > /etc/rc.conf`
 
 ### 1.2.8. Port: rbenv (https://github.com/sstephenson/rbenv)
 
@@ -139,7 +140,7 @@ Let's get Bundler and Rails installed, as we'll need those to get a basic projec
 4. `rails new sites/SITE_PROJECT_NAME`
 
 ## 2.4 Unicorn
-Inspiration goes to:
+Partial credit goes to:
 * http://sirupsen.com/setting-up-unicorn-with-nginx
 
 
@@ -153,7 +154,7 @@ Inspiration goes to:
 ## 2.5 nginx
 We've already installed nginx, so now it's time to do a little setup.
 
-Inspiration goes to:
+Partial credit goes to:
 * http://bsdbox.co/2014/01/12/emp-nginx-mysql-php-fpm-on-freebsd
 * http://theflyingdeveloper.com/server-setup-ubuntu-nginx-unicorn-capistrano-postgres
 
@@ -164,3 +165,11 @@ Inspiration goes to:
 5. `ruby -e "$(curl -fsSL https://raw.github.com/TwilightCoders/FreeNAS-Rails-Setup/master/default.rails.site -o sites/default.rails.site)"`
 6. `ruby -e "$(curl -fsSL https://raw.github.com/TwilightCoders/FreeNAS-Rails-Setup/master/nginx.conf -o nginx.conf)"`
 
+# 3. Launch!
+Alright! That wasn't too bad, now was it? Just a lot of coffee breaks waiting for things to compile/install.
+
+Now the fun begins. From the 'www' user (`sudo su - www`)
+
+1. `unicorn_rails -c /home/www/SITE_PROJECT_NAME/config/unicorn.rb -D`
+2. `/etc/rc.d/nginx start`
+3. Direct your web browser to the IP/domain of your server.
