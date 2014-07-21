@@ -97,7 +97,8 @@ V8 JavaScript for client and server
 5. `mkdir sites`
 6. `mkdir conf.d`
 7. `ruby -e "$(curl -fsSL https://raw.github.com/TwilightCoders/FreeNAS-Rails-Setup/master/options -o conf.d/options)"`
-4. `ruby -e "$(curl -fsSL https://raw.github.com/TwilightCoders/FreeNAS-Rails-Setup/master/default.rails.site -o sites/default.rails.site)"`
+8. `ruby -e "$(curl -fsSL https://raw.github.com/TwilightCoders/FreeNAS-Rails-Setup/master/default.rails.site -o sites/default.rails.site)"`
+9. `ruby -e "$(curl -fsSL https://raw.github.com/TwilightCoders/FreeNAS-Rails-Setup/master/nginx.conf -o nginx.conf)"`
 
 
 ### 1.2.8. Port: rbenv (https://github.com/sstephenson/rbenv)
