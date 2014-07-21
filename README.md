@@ -93,15 +93,28 @@ If you do, and you log in with the user you created earlier, you'll likely need 
 3. You can leave RBENV checked; we already installed it.
 4. Execute the commands we placed into our `.bash_profile`, `source ~/.bash_profile` (or `. ~/.bash_profile`)
 
+# Web Server
+Next we're going to install the things we need to get our server hooked up and running. We'll start with Ruby.
 
-Step 6: Install Ruby
+## Setup
+First however, we need to do all of this inside the `www` user, as it will be running nginx etc.
 
-rbenv install 2.1.2
-rbenv global 2.1.2
-rbenv rehash
+1. `sudo su - www`
+2. echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
+3. echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
+4. `. ~/.bash_profile`
+
+## Ruby
+
+1. `rbenv install 2.1.2`
+2. `rbenv global 2.1.2`
+3. `rbenv rehash`
 
 (test to see if Ruby runs - "ruby -v" - if not, run "exec $SHELL -l")
 
-Step 7: Install Rails
+## Rails
+Let's get Bundler and Rails installed, as we'll need those to get a basic project up and running.
 
-gem install bundler rails
+1. `gem install bundler rails`
+
+
