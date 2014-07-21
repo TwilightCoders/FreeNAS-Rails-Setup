@@ -124,8 +124,9 @@ First however, we need to do all of this inside the `www` user, as it will be ru
 Let's get Bundler and Rails installed, as we'll need those to get a basic project up and running.
 
 1. `gem install bundler rails`
-2. `rbenv rehash`
-3. `rails new sites/name_your_project`
+2. `gem install sqlite3 -- --with-sqlite3-dir=/usr/local`
+3. `rbenv rehash`
+4. `rails new sites/name_your_project`
 
 
 
