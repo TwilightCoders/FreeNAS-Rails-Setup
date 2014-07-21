@@ -160,7 +160,7 @@ Partial credit goes to:
 
 1. `gem install unicorn`
 2. `rbenv rehash`
-3. `ruby -e "$(curl -fsSL https://raw.github.com/TwilightCoders/FreeNAS-Rails-Setup/master/unicorn.rb -o sites/SITE_PROJECT_NAME/config/unicorn.rb)"`
+3. `curl -fsSL https://raw.github.com/TwilightCoders/FreeNAS-Rails-Setup/master/unicorn.rb -o sites/SITE_PROJECT_NAME/config/unicorn.rb`
 4. Edit the unicorn.rb file that is now in your config directory for the rails project you made earlier. `vi sites/SITE_PROJECT_NAME/config/unicorn.rb`
 5. Set `site_name` to the name of your project (SITE_PROJECT_NAME, or whatever you called it)
 6. `:wq!` (write, quite, because I said so)
@@ -176,9 +176,9 @@ Partial credit goes to:
 1. `cd /usr/local/etc/nginx`
 2. `mkdir sites`
 3. `mkdir conf.d`
-4. `ruby -e "$(curl -fsSL https://raw.github.com/TwilightCoders/FreeNAS-Rails-Setup/master/options -o conf.d/options)"`
-5. `ruby -e "$(curl -fsSL https://raw.github.com/TwilightCoders/FreeNAS-Rails-Setup/master/default.rails.site -o sites/default.rails.site)"`
-6. `ruby -e "$(curl -fsSL https://raw.github.com/TwilightCoders/FreeNAS-Rails-Setup/master/nginx.conf -o nginx.conf)"`
+4. `curl -fsSL https://raw.github.com/TwilightCoders/FreeNAS-Rails-Setup/master/options -o conf.d/options`
+5. `curl -fsSL https://raw.github.com/TwilightCoders/FreeNAS-Rails-Setup/master/default.rails.site -o sites/default.rails.site`
+6. `curl -fsSL https://raw.github.com/TwilightCoders/FreeNAS-Rails-Setup/master/nginx.conf -o nginx.conf`
 
 # 3. Launch!
 Alright! That wasn't too bad, now was it? Just a lot of coffee breaks waiting for things to compile/install.
