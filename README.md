@@ -88,9 +88,11 @@ If you do, and you log in with the user you created earlier, you'll likely need 
 
 ### Port: ruby-build (https://github.com/sstephenson/ruby-build)
 
-source ~/.bash_profile
+1. `cd /usr/ports/devel/ruby-build`
+2. `make install clean`
+3. You can leave RBENV checked; we already installed it.
+4. Execute the commands we placed into our `.bash_profile`, `source ~/.bash_profile` (or `. ~/.bash_profile`)
 
-(this only works because we installed git, and we are using bash)
 
 Step 6: Install Ruby
 
