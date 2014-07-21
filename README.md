@@ -80,7 +80,8 @@ If you do, and you log in with the user you created earlier, you'll likely need 
 3. I turn on `MEMMAN`
 
 
-### Port: `node`, V8 JavaScript for client and server
+### Port: node
+V8 JavaScript for client and server
 
 1. `cd /usr/ports/www/node`
 2. `make install clean`
