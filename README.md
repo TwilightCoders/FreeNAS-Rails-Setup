@@ -21,7 +21,7 @@ also make sure when choosing a shell input "bash" - otherwise csh will default, 
 3. Set shell path to bash (We'll install this in the next steps) `/usr/local/bin/bash`
 
 ### promote www to real user
-1. `mkdir /home/www`
+1. `mkdir -p /home/www/sites`
 2. `cp ~/.profile /home/www` (Copy our profile over to www, because it never had one to begin with)
 3. `chown -R www:www /home/www`
 4. `chpass www`
@@ -73,6 +73,19 @@ If you do, and you log in with the user you created earlier, you'll likely need 
 2. `make install clean`
 
 
+### Port: sqlite3
+
+1. `cd /usr/ports/databases/sqlite3`
+2. `make install clean`
+3. I turn on `MEMMAN`
+
+
+### Port: `node`, V8 JavaScript for client and server
+
+1. `cd /usr/ports/www/node`
+2. `make install clean`
+
+
 ### Port: rbenv (https://github.com/sstephenson/rbenv)
 
 1. `cd /usr/ports/devel/rbenv`
@@ -110,6 +123,8 @@ First however, we need to do all of this inside the `www` user, as it will be ru
 Let's get Bundler and Rails installed, as we'll need those to get a basic project up and running.
 
 1. `gem install bundler rails`
+2. `rbenv rehash`
+3. `rails new sites/name_your_project`
 
 
 
