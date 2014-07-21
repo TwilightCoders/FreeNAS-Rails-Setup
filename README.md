@@ -7,11 +7,9 @@ edit webserver jail get mac address fix router
 1. **name:** webserver
 2. **type:** portjail (x64)
 3. Click 'save'
-
-
-1. Click 'jails'
-1. Click 'webserver'
-1. Click 'shell'
+4. Click 'jails'
+5. Click 'webserver'
+6. Click 'shell'
 
 ## SSH access
 
