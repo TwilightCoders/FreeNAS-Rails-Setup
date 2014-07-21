@@ -182,6 +182,7 @@ Partial credit goes to:
 7. `cp default.rails.site sites/SITE_PROJECT_NAME.site`
 
 Now edit that file you just copied over and edit the following:
+
 1. Change `app_server` (line 1) to `SITE_PROJECT_NAME_server`
 2. Change the path on line 2 to match your socket path
 3. Change `server_name` to reflect the domain name you expect to use
