@@ -89,17 +89,9 @@ V8 JavaScript for client and server
 
 ### 1.2.7. Port: nginx
 
-
 1. `cd /usr/ports/www/nginx`
 2. `make install clean`
 3. I turn on `HTTP_GEOIP`, `HTTP_GZIP_STATIC`, `HTTP_GUNZIP_FILTER`, `HTTP_PERL`, `MAIL`, `MAIL_SSL`, `HTTP_AUTH_LDAP`, `HTTP_AUTH_DIGEST`, `HTTP_FANCYINDEX`, `HTTP_PUSH`, `HTTP_PUSH_STREAM`, `HTTP_REDIS`, `HTTP_RESPONSE`, `HTTP_UPLOAD`, `HTTP_UPLOAD_PROGRESS` (you can always install more or less depending on what your server needs)
-4. `cd /usr/local/etc/nginx`
-5. `mkdir sites`
-6. `mkdir conf.d`
-7. `ruby -e "$(curl -fsSL https://raw.github.com/TwilightCoders/FreeNAS-Rails-Setup/master/options -o conf.d/options)"`
-8. `ruby -e "$(curl -fsSL https://raw.github.com/TwilightCoders/FreeNAS-Rails-Setup/master/default.rails.site -o sites/default.rails.site)"`
-9. `ruby -e "$(curl -fsSL https://raw.github.com/TwilightCoders/FreeNAS-Rails-Setup/master/nginx.conf -o nginx.conf)"`
-
 
 ### 1.2.8. Port: rbenv (https://github.com/sstephenson/rbenv)
 
@@ -147,6 +139,9 @@ Let's get Bundler and Rails installed, as we'll need those to get a basic projec
 4. `rails new sites/SITE_PROJECT_NAME`
 
 ## 2.4 Unicorn
+Inspiration goes to:
+* http://sirupsen.com/setting-up-unicorn-with-nginx
+
 
 1. `gem install unicorn`
 2. `ruby -e "$(curl -fsSL https://raw.github.com/TwilightCoders/FreeNAS-Rails-Setup/master/unicorn.rb -o sites/SITE_PROJECT_NAME/config/unicorn.rb)"`
@@ -158,8 +153,14 @@ Let's get Bundler and Rails installed, as we'll need those to get a basic projec
 ## 2.5 nginx
 We've already installed nginx, so now it's time to do a little setup.
 
-1. `gem install unicorn`
-2. `ruby -e "$(curl -fsSL https://raw.github.com/TwilightCoders/FreeNAS-Rails-Setup/master/unicorn.rb -o sites/SITE_PROJECT_NAME/config/unicorn.rb)"`
-3. Edit the unicorn.rb file that is now in your config directory for the rails project you made earlier. `vi sites/SITE_PROJECT_NAME/config/unicorn.rb`
-4. Set `site_name` to the name of your project (SITE_PROJECT_NAME, or whatever you called it)
-5. `:wq!` (write, quite, because I said so)
+Inspiration goes to:
+* http://bsdbox.co/2014/01/12/emp-nginx-mysql-php-fpm-on-freebsd
+* http://theflyingdeveloper.com/server-setup-ubuntu-nginx-unicorn-capistrano-postgres
+
+1. `cd /usr/local/etc/nginx`
+2. `mkdir sites`
+3. `mkdir conf.d`
+4. `ruby -e "$(curl -fsSL https://raw.github.com/TwilightCoders/FreeNAS-Rails-Setup/master/options -o conf.d/options)"`
+5. `ruby -e "$(curl -fsSL https://raw.github.com/TwilightCoders/FreeNAS-Rails-Setup/master/default.rails.site -o sites/default.rails.site)"`
+6. `ruby -e "$(curl -fsSL https://raw.github.com/TwilightCoders/FreeNAS-Rails-Setup/master/nginx.conf -o nginx.conf)"`
+
