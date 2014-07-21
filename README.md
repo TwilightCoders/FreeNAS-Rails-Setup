@@ -27,6 +27,7 @@ also make sure when choosing a shell input "bash" - otherwise csh will default, 
 4. `chpass www`
 5. set home to `/home/www`
 6. set shell to `/usr/local/bin/bash`
+7. `pw usermod www -G wheel`
 
 ## 1.2. Ports
 In the shell that you launched for the web server jail you created we need to fetch extract and update our ports.
@@ -111,6 +112,9 @@ V8 JavaScript for client and server
 # 2. Web Server
 
 edit webserver jail get mac address fix router
+
+1. `sudo mkdir /var/run/unicorn`
+2. `chmod g+w /var/run/unicorn`
 
 
 Next we're going to install the things we need to get our server hooked up and running. We'll start with Ruby.
