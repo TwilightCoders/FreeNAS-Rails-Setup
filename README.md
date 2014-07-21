@@ -4,9 +4,9 @@ Put this stuff after
 edit webserver jail get mac address fix router
 
 # New Jail
-* **name:** webserver
-* **type:** portjail (x64)
-Click 'save'
+1. **name:** webserver
+2. **type:** portjail (x64)
+3. Click 'save'
 
 
 1. Click 'jails'
