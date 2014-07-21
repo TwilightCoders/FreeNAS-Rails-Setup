@@ -87,6 +87,19 @@ V8 JavaScript for client and server
 2. `make install clean`
 
 
+### Port: nginx
+
+
+1. `cd /usr/ports/www/nginx`
+2. `make install clean`
+3. I turn on `HTTP_GEOIP`, `HTTP_GZIP_STATIC`, `HTTP_GUNZIP_FILTER`, `HTTP_PERL`, `MAIL`, `MAIL_SSL`, `HTTP_AUTH_LDAP`, `HTTP_AUTH_DIGEST`, `HTTP_FANCYINDEX`, `HTTP_PUSH`, `HTTP_PUSH_STREAM`, `HTTP_REDIS`, `HTTP_RESPONSE`, `HTTP_UPLOAD`, `HTTP_UPLOAD_PROGRESS` (you can always install more or less depending on what your server needs)
+4. `cd /usr/local/etc/nginx`
+5. `mkdir sites`
+6. `mkdir conf.d`
+7. `ruby -e "$(curl -fsSL https://raw.github.com/TwilightCoders/FreeNAS-Rails-Setup/master/options -o conf.d/options)"`
+4. `ruby -e "$(curl -fsSL https://raw.github.com/TwilightCoders/FreeNAS-Rails-Setup/master/default.rails.site -o sites/default.rails.site)"`
+
+
 ### Port: rbenv (https://github.com/sstephenson/rbenv)
 
 1. `cd /usr/ports/devel/rbenv`
@@ -135,6 +148,17 @@ Let's get Bundler and Rails installed, as we'll need those to get a basic projec
 3. Edit the unicorn.rb file that is now in your config directory for the rails project you made earlier. `vi sites/SITE_PROJECT_NAME/config/unicorn.rb`
 4. Set `site_name` to the name of your project (SITE_PROJECT_NAME, or whatever you called it)
 5. `:wq!` (write, quite, because I said so)
+
+
+## nginx
+We've already installed nginx, so now it's time to do a little setup.
+
+1. `gem install unicorn`
+2. `ruby -e "$(curl -fsSL https://raw.github.com/TwilightCoders/FreeNAS-Rails-Setup/master/unicorn.rb -o sites/SITE_PROJECT_NAME/config/unicorn.rb)"`
+3. Edit the unicorn.rb file that is now in your config directory for the rails project you made earlier. `vi sites/SITE_PROJECT_NAME/config/unicorn.rb`
+4. Set `site_name` to the name of your project (SITE_PROJECT_NAME, or whatever you called it)
+5. `:wq!` (write, quite, because I said so)
+
 
 # Server
 edit webserver jail get mac address fix router
