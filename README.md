@@ -94,8 +94,8 @@ Next we're going to install the things we need to get our server hooked up and r
 First however, we need to do all of this inside the `www` user, as it will be running nginx etc.
 
 1. `sudo su - www`
-2. echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
-3. echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
+2. `echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile`
+3. `echo 'eval "$(rbenv init -)"' >> ~/.bash_profile`
 4. `. ~/.bash_profile`
 
 ## Ruby
