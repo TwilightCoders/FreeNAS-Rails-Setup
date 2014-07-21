@@ -1,5 +1,5 @@
 upstream app_server {
-	server unix:/tmp/unicorn.<app-name>.socket fail_timeout=0;
+	server unix:/var/run/unicorn/<app-name>.socket fail_timeout=0;
 }
  
 server {
