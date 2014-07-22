@@ -152,6 +152,9 @@ Let's get Bundler and Rails installed, as we'll need those to get a basic projec
 2. `gem install sqlite3 -- --with-sqlite3-dir=/usr/local`
 3. `rbenv rehash`
 4. `rails new sites/SITE_PROJECT_NAME`
+5. `mv SITE_PROJECT_NAME current`
+6. `mkdir SITE_PROJECT_NAME`
+7. `mv current SITE_PROJECT_NAME`
 
 ## 2.4 Unicorn
 Partial credit goes to:
