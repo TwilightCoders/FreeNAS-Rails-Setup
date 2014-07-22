@@ -112,7 +112,7 @@ V8 JavaScript for client and server
 3. You can leave RBENV checked; we already installed it.
 4. Execute the commands we placed into our `.bash_profile`, `source ~/.bash_profile` (or `. ~/.bash_profile`)
 
-## 1.2.10. Port: ruby
+### 1.2.10. Port: ruby
 Let's install ruby at the base of our server. We'll be installing localized ruby versions later, (rbenv) but it's nice to have a global ruby present.
 
 1. `cd /usr/ports/lang/ruby21`
