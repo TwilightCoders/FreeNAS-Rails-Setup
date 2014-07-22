@@ -198,5 +198,5 @@ Alright! That wasn't too bad, now was it? Just a lot of coffee breaks waiting fo
 Now the fun begins. From the 'www' user (`sudo su - www`)
 
 1. `unicorn -c /home/www/sites/SITE_PROJECT_NAME/current/config/unicorn.rb -D`
-2. `/etc/rc.d/nginx start`
+2. `/usr/local/etc/rc.d/nginx start`
 3. Direct your web browser to the IP/domain of your server.
