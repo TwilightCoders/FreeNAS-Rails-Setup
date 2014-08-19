@@ -190,7 +190,7 @@ Now edit that file you just copied over and edit the following:
 2. Change the path on line 2 to match your socket path
 3. Change `server_name` to reflect the domain name you expect to use
 4. Change the `root` path to match your project path
-5. Finally, change the `proxy_path` (near the bottom) to reflect the change you made in the first step
+5. Finally, change the `proxy_pass` (near the bottom) to reflect the change you made in the first step
 
 # 3. Launch!
 Alright! That wasn't too bad, now was it? Just a lot of coffee breaks waiting for things to compile/install.
