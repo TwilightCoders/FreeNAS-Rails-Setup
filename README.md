@@ -163,8 +163,8 @@ Partial credit goes to:
 
 1. `gem install unicorn`
 2. `rbenv rehash`
-3. `curl -fsSL https://raw.github.com/TwilightCoders/FreeNAS-Rails-Setup/master/unicorn.rb -o sites/SITE_PROJECT_NAME/config/unicorn.rb`
-4. Edit the unicorn.rb file that is now in your config directory for the rails project you made earlier. `vi sites/SITE_PROJECT_NAME/config/unicorn.rb`
+3. `curl -fsSL https://raw.github.com/TwilightCoders/FreeNAS-Rails-Setup/master/unicorn.rb -o ~/sites/SITE_PROJECT_NAME/config/unicorn.rb`
+4. Edit the unicorn.rb file that is now in your config directory for the rails project you made earlier. `vi ~/sites/SITE_PROJECT_NAME/config/unicorn.rb`
 5. Set `site_name` to the name of your project (SITE_PROJECT_NAME, or whatever you called it)
 6. `:wq!` (write, quit, because I said so)
 
@@ -190,7 +190,7 @@ Now edit that file you just copied over and edit the following:
 2. Change the path on line 2 to match your socket path
 3. Change `server_name` to reflect the domain name you expect to use
 4. Change the `root` path to match your project path
-5. Finally, change the `proxy_path` (near the bottom) to reflect the change you made in the first step
+5. Finally, change the `proxy_pass` (near the bottom) to reflect the change you made in the first step
 
 # 3. Launch!
 Alright! That wasn't too bad, now was it? Just a lot of coffee breaks waiting for things to compile/install.
