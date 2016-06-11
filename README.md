@@ -139,8 +139,8 @@ First however, we need to do all of this inside the `www` user, as it will be ru
 
 ## 2.2. Ruby
 
-1. `rbenv install 2.1.2`
-2. `rbenv global 2.1.2`
+1. `rbenv install 2.3.0`
+2. `rbenv global 2.3.0`
 3. `rbenv rehash`
 
 (test to see if Ruby runs - "ruby -v" - if not, run "exec $SHELL -l")
@@ -149,12 +149,16 @@ First however, we need to do all of this inside the `www` user, as it will be ru
 Let's get Bundler and Rails installed, as we'll need those to get a basic project up and running.
 
 1. `gem install bundler rails`
-2. `gem install sqlite3 -- --with-sqlite3-dir=/usr/local`
-3. `rbenv rehash`
-4. `rails new sites/SITE_PROJECT_NAME`
-5. `mv SITE_PROJECT_NAME current`
-6. `mkdir SITE_PROJECT_NAME`
-7. `mv current SITE_PROJECT_NAME`
+2. if nokogiri fails to install with rails, run this command:
+   `gem install nokogiri -- --use-system-libraries`
+   then
+   `gem install rails`
+3. `gem install sqlite3 -- --with-sqlite3-dir=/usr/local`
+4. `rbenv rehash`
+5. `rails new sites/SITE_PROJECT_NAME`
+6. `mv SITE_PROJECT_NAME current`
+7. `mkdir SITE_PROJECT_NAME`
+8. `mv current SITE_PROJECT_NAME`
 
 ## 2.4 Unicorn
 Partial credit goes to:
