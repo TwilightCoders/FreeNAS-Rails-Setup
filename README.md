@@ -156,9 +156,10 @@ Let's get Bundler and Rails installed, as we'll need those to get a basic projec
 3. `gem install sqlite3 -- --with-sqlite3-dir=/usr/local`
 4. `rbenv rehash`
 5. `rails new sites/SITE_PROJECT_NAME`
-6. `mv SITE_PROJECT_NAME current`
-7. `mkdir SITE_PROJECT_NAME`
-8. `mv current SITE_PROJECT_NAME`
+6. `cd sites`
+7. `mv SITE_PROJECT_NAME current`
+8. `mkdir SITE_PROJECT_NAME`
+9. `mv current SITE_PROJECT_NAME`
 
 ## 2.4 Unicorn
 Partial credit goes to:
@@ -167,8 +168,8 @@ Partial credit goes to:
 
 1. `gem install unicorn`
 2. `rbenv rehash`
-3. `curl -fsSL https://raw.github.com/TwilightCoders/FreeNAS-Rails-Setup/master/unicorn.rb -o ~/sites/SITE_PROJECT_NAME/config/unicorn.rb`
-4. Edit the unicorn.rb file that is now in your config directory for the rails project you made earlier. `vi ~/sites/SITE_PROJECT_NAME/config/unicorn.rb`
+3. `curl -fsSL https://raw.github.com/TwilightCoders/FreeNAS-Rails-Setup/master/unicorn.rb -o ~/sites/SITE_PROJECT_NAME/current/config/unicorn.rb`
+4. Edit the unicorn.rb file that is now in your config directory for the rails project you made earlier. `vi ~/sites/SITE_PROJECT_NAME/current/config/unicorn.rb`
 5. Set `site_name` to the name of your project (SITE_PROJECT_NAME, or whatever you called it)
 6. `:wq!` (write, quit, because I said so)
 
@@ -203,5 +204,11 @@ Now the fun begins. From the 'www' user (`sudo su - www`)
 
 1. `unicorn -c /home/www/sites/SITE_PROJECT_NAME/current/config/unicorn.rb -D`
 2. now exit back out of user www
-2. `/usr/local/etc/rc.d/nginx start`
-3. Direct your web browser to the IP/domain of your server.
+3. `/usr/local/etc/rc.d/nginx start` if running as root, or run command with `sudo`
+4. Direct your web browser to the IP/domain of your server.
+
+#3.1 Possible edits needed
+If unable to run `/usr/local/etc/rc.d/nginx start` there are a couple of possible reasons:
+
+1. It could be that `nginx_enable="YES"` needs to be added to rc.conf file
+2. It is also possible that you will need to run `sudo /var/log/nginx` in order to create the nginx directory for the logs
