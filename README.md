@@ -197,6 +197,29 @@ Now edit that file you just copied over and edit the following:
 4. Change the `root` path to match your project path
 5. Finally, change the `proxy_pass` (near the bottom) to reflect the change you made in the first step
 
+## 2.6 unicorn shell script
+Now that everything is in place, we need to setup a script to run unicorn when the server launches. The script that works best is located: https://github.com/caleb/freebsd-unicorn
+
+Perform these actions as root, or with `sudo`
+
+Download the unicorn shell script:
+`curl -fsSL https://github.com/caleb/freebsd-unicorn/raw/master/unicorn -o /usr/local/etc/rc.d/unicorn`
+
+Add flags to `rc.conf` to set up the script:
+`vi /etc/rc.conf`
+
+Add these settings:
+`unicorn_enable="YES"`
+
+`unicorn_command="/home/www/.rbenv/versions/2.3.0/bin/unicorn_rails"`
+`unicorn_env="development"  # or "production" if that's the correct environment`
+`unicorn_pidfile="/var/run/unicorn/<app_name>.pid"`
+`unicorn_old_pidfile="/var/run/unicorn/<app_name>_old.pid"`
+`unicorn_listen="/var/run/unicorn/<app_name>.socket"`
+`unicorn_config="/home/www/sites/<app_name>/current/config/unicorn.rb"`
+`unicorn_chdir="/home/www/sites/<app_name>"`
+`unicorn_user="www"`
+
 # 3. Launch!
 Alright! That wasn't too bad, now was it? Just a lot of coffee breaks waiting for things to compile/install.
 
